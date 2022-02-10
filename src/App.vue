@@ -4,9 +4,10 @@
       app
       color="primary"
       dark
+      hide-on-scroll
     >
       <div class="d-flex align-center">
-        <v-toolbar-title>主页</v-toolbar-title>
+        <v-toolbar-title>{{ toolbarTitle }}</v-toolbar-title>
       </div>
 
       <v-spacer></v-spacer>
@@ -28,12 +29,10 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
-
   data: () => ({
-    //
+    toolbarTitle: '主页'
   }),
 };
 </script>
