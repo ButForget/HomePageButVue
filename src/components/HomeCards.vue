@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="mt-1">
       <v-col v-for="card in cards" :key="card.id" class="d-flex justify-center">
-        <v-card elevation="2" class="rounded-lg" width="1000px">
+        <v-card elevation="2" class="rounded-lg" style="width: 1000px">
           <v-card-title primary-title>
             {{ card.title }}
           </v-card-title>
@@ -10,7 +10,13 @@
             {{ card.subTitle }}
           </v-card-subtitle>
           <v-card-actions class="float-right">
-            <v-btn text color="primary" class="rounded-lg">打开</v-btn>
+            <v-btn
+              text
+              @click="openUrl(card.url)"
+              color="primary"
+              class="rounded-md"
+              >打开</v-btn
+            >
           </v-card-actions>
         </v-card>
       </v-col>
@@ -37,8 +43,13 @@ export default {
         title: "抽签系统",
         subTitle: "Drawing System",
         url: "Drawer",
-      }
+      },
     ],
   }),
-};
+  methods: {
+     openUrl(url) {
+        window.open('#/' + url,"_self")
+    }
+  }
+}
 </script>
