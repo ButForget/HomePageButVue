@@ -12,7 +12,7 @@
           <v-card-actions class="float-right">
             <v-btn
               text
-              @click="openUrl(card.url)"
+              @click="$router.push(card.url)"
               color="secondary"
               class="rounded-md"
               >打开</v-btn
