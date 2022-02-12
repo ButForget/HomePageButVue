@@ -13,7 +13,7 @@
             <v-btn
               text
               @click="openUrl(card.url)"
-              color="primary"
+              color="secondary"
               class="rounded-md"
               >打开</v-btn
             >
@@ -29,11 +29,11 @@ export default {
   name: "HomeCards",
   data: () => ({
     cards: [
-      {
-        title: "BPM测试",
-        subTitle: "Beats Per Minute Test",
-        url: "BPM",
-      },
+      // {
+      //   title: "BPM测试",
+      //   subTitle: "Beats Per Minute Test",
+      //   url: "BPM",
+      // },
       {
         title: "座位自动安排系统",
         subTitle: "Seats Arrange System",
@@ -46,10 +46,6 @@ export default {
       },
     ],
   }),
-  methods: {
-     openUrl(url) {
-        window.open('#/' + url,"_self")
-    }
-  }
-}
+  methods: {},
+};
 </script>
