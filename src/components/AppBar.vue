@@ -1,12 +1,15 @@
 <template>
   <v-app-bar app color="primary" dark hide-on-scroll>
+    <v-app-bar-nav-icon v-if="backBtn" @click="$router.push({ name: 'Home' })">
+      <v-icon>mdi-arrow-left</v-icon>
+    </v-app-bar-nav-icon>
     <div class="d-flex align-center">
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-app-bar-title>{{ title }}</v-app-bar-title>
     </div>
     <v-spacer></v-spacer>
-    <v-btn href="" target="_blank" text icon>
+    <!-- <v-btn text icon>
       <v-icon>mdi-dots-vertical</v-icon>
-    </v-btn>
+    </v-btn> -->
   </v-app-bar>
 </template>
 
@@ -14,6 +17,6 @@
 export default {
   name: "AppBar",
   data: () => ({}),
-  props: ["title"],
+  props: ["title", "backBtn"],
 };
 </script>

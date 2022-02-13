@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import BPM from '../views/BPM.vue'
-Vue.use(VueRouter)
+import Drawer from '../views/Drawer.vue'
 
+Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
@@ -11,9 +11,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/BPM',
-    name: 'BPM',
-    component: BPM
+    path: '/Drawer',
+    name: 'Drawer',
+    component: Drawer
   }
 ]
 
