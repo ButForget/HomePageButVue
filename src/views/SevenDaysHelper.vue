@@ -1,22 +1,28 @@
 <template>
-<AppBar :backBtn="true" title="七天网络助手"></AppBar>
+  <v-container>
+    <AppBar :backBtn="true" title="七天网络助手"></AppBar>
+    <LoginDialog :needLogin="needLogin" @close="needLogin = false"></LoginDialog>
+  </v-container>
 </template>
 
 <script>
-import AppBar from "../components/AppBar.vue"
+import AppBar from "../components/AppBar.vue";
+import LoginDialog from "../components/SevenDaysHelper/LoginDialog.vue";
 export default {
   name: "SevenDaysHelper",
-  components:{
-      AppBar
+  components: {
+    AppBar,
+    LoginDialog,
   },
-  methods:{
-      
-  },
+  data: () => ({
+      needLogin: true,
+  }),
+  methods: {},
   mounted() {
-      if (localStorage.getItem("")) {
-          console.log("");
-      }
-  }
+    if (localStorage.getItem("")) {
+      console.log("");
+    }
+  },
 };
 </script>
 

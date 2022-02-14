@@ -10,12 +10,18 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      title: '首页'
+    }
   },
   {
     path: '/SevenDaysHelper',
     // name: 'SevenDaysHelper',
     component: SevenDaysHelper,
+    meta: {
+      title: '七天网络助手'
+    }
     // children: [{
     //   path: '',
     //   component: NameDrawer
@@ -38,6 +44,9 @@ const routes = [
       component: NumDrawer,
     },
     ],
+    meta: {
+      title: '抽签系统'
+    }
   }
 ]
 
