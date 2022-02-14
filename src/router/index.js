@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import Drawer from '../views/Drawer'
-import NameDrawer from "../components/NameDrawer"
-import NumDrawer from "../components/NumDrawer"
+import NameDrawer from "../components/Drawer/NameDrawer"
+import NumDrawer from "../components/Drawer/NumDrawer"
+import SevenDaysHelper from "../views/SevenDaysHelper"
 Vue.use(VueRouter)
 const routes = [
   {
@@ -12,8 +13,17 @@ const routes = [
     component: Home
   },
   {
+    path: '/SevenDaysHelper',
+    // name: 'SevenDaysHelper',
+    component: SevenDaysHelper,
+    // children: [{
+    //   path: '',
+    //   component: NameDrawer
+    // },
+    // ],
+  },
+  {
     path: '/Drawer',
-    name: 'Drawer',
     component: Drawer,
     children: [{
       path: '',
