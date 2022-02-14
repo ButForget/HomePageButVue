@@ -2,6 +2,7 @@
   <v-container>
     <AppBar :backBtn="true" title="抽签系统"></AppBar>
     <!-- <NameDrawer></NameDrawer> -->
+    <router-view></router-view>
   </v-container>
 </template>
 
