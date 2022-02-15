@@ -7,7 +7,7 @@
 
 <script>
 import AppBar from "../components/AppBar.vue";
-import LoginDialog from "../components/SevenDaysHelper/LoginDialog.vue";
+import LoginDialog from "../components/SevenDaysHelper/LoginDialog/LoginDialog.vue";
 export default {
   name: "SevenDaysHelper",
   components: {
@@ -15,12 +15,12 @@ export default {
     LoginDialog,
   },
   data: () => ({
-      needLogin: true,
+      needLogin: false,
   }),
   methods: {},
   mounted() {
-    if (localStorage.getItem("")) {
-      console.log("");
+    if (localStorage.getItem("token") == null) {
+      this.needLogin = true;
     }
   },
 };
