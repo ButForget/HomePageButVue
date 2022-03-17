@@ -22,6 +22,11 @@ const routes = [
       component: NameDrawer
     },
     {
+      path: 'Daisy',
+      component: NameDrawer,
+      props:{c:"Daisy"}
+    },
+    {
       path: 'NameDrawer',
       component: NameDrawer,
     },
