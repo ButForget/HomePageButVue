@@ -19,25 +19,32 @@ const routes = [
     component: Drawer,
     children: [{
       path: '',
-      component: NameDrawer
+      component: NameDrawer,
+      meta: {
+        title: '抽签系统'
+      }
     },
     {
       path: 'Daisy',
       component: NameDrawer,
-      props:{c:"Daisy"}
+      props: { c: "Daisy" },
+      meta: {
+        title: '抽签系统 for Daisy'
+      }
     },
     {
       path: 'NameDrawer',
       component: NameDrawer,
+      meta: {
+        title: '抽签系统'
+      }
     },
     {
       path: 'NumDrawer',
       component: NumDrawer,
     },
     ],
-    meta: {
-      title: '抽签系统'
-    }
+
   }
 ]
 
