@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import Drawer from '../views/Drawer'
+import Homework from "../views/Homework"
+
 import NameDrawer from "../components/Drawer/NameDrawer"
 import NumDrawer from "../components/Drawer/NumDrawer"
 Vue.use(VueRouter)
@@ -44,7 +46,14 @@ const routes = [
       component: NumDrawer,
     },
     ],
-
+  },
+  {
+    path: '/Homework',
+    name: 'Homework',
+    component: Homework,
+    meta: {
+      title: '作业汇总'
+    }
   }
 ]
 
