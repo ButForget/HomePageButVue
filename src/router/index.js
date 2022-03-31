@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
-import Drawer from '../views/Drawer'
-import Homework from "../views/Homework"
+const Drawer = () => import('../views/Drawer')
+const NameDrawer = () => import("../components/Drawer/NameDrawer")
+const NumDrawer = () => import("../components/Drawer/NumDrawer")
 
-import NameDrawer from "../components/Drawer/NameDrawer"
-import NumDrawer from "../components/Drawer/NumDrawer"
+const Homework = () => import("../views/Homework")
+
 Vue.use(VueRouter)
 const routes = [
   {
