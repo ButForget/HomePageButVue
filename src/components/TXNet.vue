@@ -5,7 +5,7 @@
       <v-col v-for="part in q" :key="part.id" class="d-flex justify-center">
         <v-card elevation="2" class="rounded-lg" ripple style="width: 1000px">
           <v-card-title primary-title>
-            {{ part.question_text.substring(0, part.question_text.length - 7) }}
+            {{ getQuestionText(part) }}
           </v-card-title>
           <v-card-title>
             答案：
@@ -53,6 +53,13 @@ export default {
           return part.options[1];
         case "C":
           return part.options[2];
+      }
+    },
+    getQuestionText(part) {
+      if (part.question_text.indexOf("<br") != -1) {
+        return part.question_text.substring(0, part.question_text.length - 7);
+      } else {
+        return part.question_text;
       }
     },
   },

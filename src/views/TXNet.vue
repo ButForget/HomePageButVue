@@ -8,7 +8,6 @@
 
 <script>
 import AppBar from "../components/AppBar.vue";
-import TXNet from "../components/TXNet.vue";
 export default {
   name: "Homework",
   components: {
