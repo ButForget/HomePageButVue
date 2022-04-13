@@ -30,7 +30,7 @@ export default {
   methods: {
     get() {
       axios
-        .get("/page1.txt")
+        .get("/page1")
         .then((response) => {
           this.page = response.data;
           this.q = this.page.slides[1].questionList;
