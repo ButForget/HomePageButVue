@@ -4,7 +4,7 @@ import Home from '../views/Home'
 const Drawer = () => import('../views/Drawer')
 const NameDrawer = () => import("../components/Drawer/NameDrawer")
 const NumDrawer = () => import("../components/Drawer/NumDrawer")
-
+const TXNet = () => import("../components/TXNet")
 const Homework = () => import("../views/Homework")
 
 Vue.use(VueRouter)
@@ -54,6 +54,13 @@ const routes = [
     component: Homework,
     meta: {
       title: '作业汇总'
+    }
+  },{
+    path: '/TXNet',
+    name: 'TXNet',
+    component: TXNet,
+    meta: {
+      title: '天天学习'
     }
   }
 ]
