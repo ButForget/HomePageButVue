@@ -58,6 +58,7 @@ export default {
         .get("/password")
         .then((response) => {
           this.passwordMD5 = response.data;
+          this.checkPassword();
         })
         .catch(function (error) {
           console.log(error);
@@ -104,5 +105,6 @@ export default {
     this.get();
     this.checkPassword();
   },
+  
 };
 </script>
