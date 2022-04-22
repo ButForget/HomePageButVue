@@ -18,10 +18,10 @@
       ></v-row>
     </div>
     <v-row v-if="checked" class="mt-1">
-      <v-col v-for="part in q" :key="part.id" class="d-flex justify-center">
+      <v-col v-for="(part,id) in q" :key="part.id" class="d-flex justify-center">
         <v-card elevation="2" class="rounded-lg" ripple style="width: 1000px">
           <v-card-title primary-title>
-            {{ getQuestionText(part) }}
+            {{ id+1 + "." + getQuestionText(part) }}
           </v-card-title>
           <v-card-title>
             答案：
@@ -104,7 +104,6 @@ export default {
     this.password = this.$route.params.password;
     this.get();
     this.checkPassword();
-  },
-  
+  }
 };
 </script>
