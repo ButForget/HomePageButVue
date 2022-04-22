@@ -2,7 +2,7 @@
   <v-container>
     <div class="d-flex justify-center display-1">英语学习是你自己的事</div>
     <div>
-      <div v-if="!checked" class="d-flex justify-center display-1">
+      <div v-if="!checked" @load="checkPassword" class="d-flex justify-center display-1">
         小加了一个密码
       </div>
       <v-row class="d-flex justify-center">
@@ -18,7 +18,6 @@
       ></v-row>
     </div>
     <v-row v-if="checked" class="mt-1">
-      {{ "aa" }}
       <v-col v-for="part in q" :key="part.id" class="d-flex justify-center">
         <v-card elevation="2" class="rounded-lg" ripple style="width: 1000px">
           <v-card-title primary-title>
@@ -102,8 +101,8 @@ export default {
   mounted() {
     this.getPassword();
     this.password = this.$route.params.password;
-    this.checkPassword()
     this.get();
+    this.checkPassword();
   },
 };
 </script>
