@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cc27f"],{"4d70":function(n,e,t){"use strict";t.r(e);var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("v-container",[t("AppBar",{attrs:{backBtn:!0,title:"抽签系统"}}),t("router-view")],1)},r=[],c=t("dd38"),o={name:"Drawer",components:{AppBar:c["a"]}},p=o,u=t("2877"),i=t("6544"),l=t.n(i),s=t("a523"),w=Object(u["a"])(p,a,r,!1,null,null,null);e["default"]=w.exports;l()(w,{VContainer:s["a"]})}}]);
-//# sourceMappingURL=chunk-2d0cc27f.e90550d8.js.map
+//# sourceMappingURL=chunk-2d0cc27f.ebcf4064.js.map

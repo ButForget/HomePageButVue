@@ -55,13 +55,14 @@ const routes = [
     meta: {
       title: '作业汇总'
     }
-  },{
+  }, {
     path: '/TXNet',
     name: 'TXNet',
     component: TXNet,
     meta: {
       title: '天天学习'
-    }
+    },
+    children: [{ path: ':password' }],
   }
 ]
 
