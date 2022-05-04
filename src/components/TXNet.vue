@@ -22,7 +22,6 @@
       ></v-row>
     </div>
     <v-row v-if="checked" class="mt-1">
-      aa
       <v-col
         v-for="(part, id) in q"
         :key="part.id"
@@ -61,11 +60,7 @@ export default {
       axios
         .post(`https://tools.hakimyu.cn/api/auth?password=${this.password}`)
         .then((response) => {
-          console.log(response.data)
           let sign = md5((response.data.status_code).toString() + (response.data.t).toString());
-          console.log('response.data.t: ', response.data.t);
-          console.log('response.data.status_code: ', response.data.status_code);
-          console.log('sign: ', sign);
 
           if (
             response.data.status_code == 200 &&
