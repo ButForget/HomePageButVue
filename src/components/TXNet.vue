@@ -59,7 +59,7 @@ export default {
   methods: {
     checkPassword() {
       axios
-        .post(`http://120.76.206.197:8006/auth?password=${this.password}`)
+        .post(`https://tools.hakimyu.cn/api/auth?password=${this.password}`)
         .then((response) => {
           console.log(response.data)
           let sign = md5((response.data.status_code).toString() + (response.data.t).toString());
