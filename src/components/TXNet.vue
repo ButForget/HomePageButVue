@@ -55,7 +55,7 @@ export default {
     },
     getPassword() {
       axios
-        .get("/password")
+        .get(`/password?t=${Date.now()}`)
         .then((response) => {
           this.passwordMD5 = response.data;
           this.checkPassword();
@@ -66,7 +66,7 @@ export default {
     },
     get() {
       axios
-        .get("/page1")
+        .get(`/page1?t=${Date.now()}`)
         .then((response) => {
           this.page = response.data;
           this.q = this.page.slides[1].questionList;

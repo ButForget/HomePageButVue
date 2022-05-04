@@ -62,7 +62,12 @@ const routes = [
     meta: {
       title: '天天学习'
     },
-    children: [{ path: ':password' }],
+    children: [{
+      path: ':password', 
+      meta: {
+        title: '天天学习'
+      },
+    }],
   }
 ]
 
