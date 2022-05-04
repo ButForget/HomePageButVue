@@ -2,7 +2,11 @@
   <v-container>
     <div class="d-flex justify-center display-1">英语学习是你自己的事</div>
     <div>
-      <div v-if="!checked" @load="checkPassword" class="d-flex justify-center display-1">
+      <div
+        v-if="!checked"
+        @load="checkPassword"
+        class="d-flex justify-center display-1"
+      >
         小加了一个密码
       </div>
       <v-row class="d-flex justify-center">
@@ -18,10 +22,15 @@
       ></v-row>
     </div>
     <v-row v-if="checked" class="mt-1">
-      <v-col v-for="(part,id) in q" :key="part.id" class="d-flex justify-center">
+      aa
+      <v-col
+        v-for="(part, id) in q"
+        :key="part.id"
+        class="d-flex justify-center"
+      >
         <v-card elevation="2" class="rounded-lg" ripple style="width: 1000px">
           <v-card-title primary-title>
-            {{ id+1 + "." + getQuestionText(part) }}
+            {{ id + 1 + "." + getQuestionText(part) }}
           </v-card-title>
           <v-card-title>
             答案：
@@ -49,16 +58,23 @@ export default {
   }),
   methods: {
     checkPassword() {
-      if (md5(this.password) == this.passwordMD5) {
-        this.checked = true;
-      }
-    },
-    getPassword() {
       axios
-        .get(`/password?t=${Date.now()}`)
+        .post(`http://120.76.206.197:8006/auth?password=${this.password}`)
         .then((response) => {
-          this.passwordMD5 = response.data;
-          this.checkPassword();
+          console.log(response.data)
+          let sign = md5((response.data.status_code).toString() + (response.data.t).toString());
+          console.log('response.data.t: ', response.data.t);
+          console.log('response.data.status_code: ', response.data.status_code);
+          console.log('sign: ', sign);
+
+          if (
+            response.data.status_code == 200 &&
+            response.data.sign == sign
+          ) {
+            this.checked = true;
+          } else if (response.data.sign != sign) {
+            alert("别扒拉了草！");
+          }
         })
         .catch(function (error) {
           console.log(error);
@@ -100,10 +116,9 @@ export default {
     },
   },
   mounted() {
-    this.getPassword();
     this.password = this.$route.params.password;
     this.get();
     this.checkPassword();
-  }
+  },
 };
 </script>
