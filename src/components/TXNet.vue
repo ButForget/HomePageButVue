@@ -45,6 +45,7 @@
 
 <script>
 import axios from "axios";
+import JSONPath from "jsonpath";
 import md5 from "blueimp-md5";
 export default {
   name: "TXNet",
@@ -60,12 +61,11 @@ export default {
       axios
         .post(`https://tools.hakimyu.cn/api/auth?password=${this.password}`)
         .then((response) => {
-          let sign = md5((response.data.status_code).toString() + (response.data.t).toString());
+          let sign = md5(
+            response.data.status_code.toString() + response.data.t.toString()
+          );
 
-          if (
-            response.data.status_code == 200 &&
-            response.data.sign == sign
-          ) {
+          if (response.data.status_code == 200 && response.data.sign == sign) {
             this.checked = true;
           } else if (response.data.sign != sign) {
             alert("别扒拉了草！");
@@ -79,14 +79,10 @@ export default {
       axios
         .get(`/page1?t=${Date.now()}`)
         .then((response) => {
-          this.page = response.data;
-          this.q = this.page.slides[1].questionList;
-          for (let i = 0; i < 3; i++) {
-            this.page.slides.splice(0, 1);
-          }
-          for (let ql of this.page.slides) {
-            this.q = this.q.concat(ql.questionList[0].questions_list);
-          }
+          let q1 = JSONPath.query(response.data, "$..questionList.*");
+          q1 = q1.slice(0, 5)
+          let q2 = JSONPath.query(response.data, "$..questions_list.*");
+          this.q = q1.concat(q2);
         })
         .catch(function (error) {
           console.log(error);
