@@ -1,3 +1,13 @@
+<!--
+ * @Author: HakimYu yhjredin@gmail.com
+ * @Date: 2022-03-30 15:08:28
+ * @LastEditors: HakimYu yhjredin@gmail.com
+ * @LastEditTime: 2022-05-10 14:07:35
+ * @FilePath: \homepagebutvue\src\components\HomeworkCards.vue
+ * @Description: HomeworkCards components
+ * 
+ * Copyright (c) 2022 by HakimYu yhjredin@gmail.com, All Rights Reserved. 
+-->
 <template>
   <v-item-group multiple>
     <v-container>
@@ -62,6 +72,11 @@ export default {
     xcxItems: [],
   }),
   methods: {
+    /**
+     * @description: get homework data from file: homework.txt
+     * @param {*}
+     * @return {*}
+     */
     getHomeworks() {
       axios
         .get("/homework.txt")

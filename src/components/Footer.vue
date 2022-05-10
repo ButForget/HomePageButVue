@@ -1,3 +1,13 @@
+<!--
+ * @Author: HakimYu yhjredin@gmail.com
+ * @Date: 2022-02-12 19:05:27
+ * @LastEditors: HakimYu yhjredin@gmail.com
+ * @LastEditTime: 2022-05-10 14:11:20
+ * @FilePath: \homepagebutvue\src\components\Footer.vue
+ * @Description: shared footer component
+ * 
+ * Copyright (c) 2022 by HakimYu yhjredin@gmail.com, All Rights Reserved. 
+-->
 <template>
   <div style="height: 100px">
     <v-footer absolute>

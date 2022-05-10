@@ -1,3 +1,13 @@
+/*
+ * @Author: HakimYu yhjredin@gmail.com
+ * @Date: 2022-02-03 16:14:06
+ * @LastEditors: HakimYu yhjredin@gmail.com
+ * @LastEditTime: 2022-05-10 13:55:02
+ * @FilePath: \homepagebutvue\src\router\index.js
+ * @Description: router
+ * 
+ * Copyright (c) 2022 by HakimYu yhjredin@gmail.com, All Rights Reserved. 
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
@@ -63,7 +73,7 @@ const routes = [
       title: '天天学习'
     },
     children: [{
-      path: ':password', 
+      path: ':password',
       meta: {
         title: '天天学习'
       },

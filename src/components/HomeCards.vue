@@ -1,3 +1,13 @@
+<!--
+ * @Author: HakimYu yhjredin@gmail.com
+ * @Date: 2022-02-03 16:12:46
+ * @LastEditors: HakimYu yhjredin@gmail.com
+ * @LastEditTime: 2022-05-10 14:11:37
+ * @FilePath: \homepagebutvue\src\components\HomeCards.vue
+ * @Description: home page cards component
+ * 
+ * Copyright (c) 2022 by HakimYu yhjredin@gmail.com, All Rights Reserved. 
+-->
 <template>
   <v-container>
     <v-row class="mt-1">
