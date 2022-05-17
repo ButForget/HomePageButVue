@@ -2,7 +2,7 @@
   <v-container>
     <AppBar :backBtn="true" title="CaK七天助手"></AppBar>
     <v-row v-if="this.is_need_login" class="d-flex justify-center">
-      <CaKStuLoginCard @login-ok="login"
+      <CaKStuLoginCard style="margin: 50px;" @login-ok="login"
       ></CaKStuLoginCard>
     </v-row>
     <v-row 
@@ -93,7 +93,7 @@ export default {
             
           });
         }catch(error){console.log(error);} 
-      }
+      }else{return false;}
     },
     async fetch_exam_info(){
       try{
