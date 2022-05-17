@@ -16,6 +16,15 @@
     <div class="d-flex align-center">
       <v-app-bar-title>{{ title }}</v-app-bar-title>
     </div>
+    <v-btn 
+      v-if="home"
+      right="true"
+      fixed="true"
+      color="teal"
+      fab
+      small
+      @click="$router.push('TXNet')"
+    > TX</v-btn>
     <v-spacer></v-spacer>
     <!-- unused icon --->
     <!-- <v-btn text icon>
@@ -28,6 +37,6 @@
 export default {
   name: "AppBar",
   data: () => ({}),
-  props: ["title", "backBtn"],
+  props: ["title", "backBtn", "home"],
 };
 </script>

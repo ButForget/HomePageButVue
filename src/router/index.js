@@ -11,78 +11,91 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
-const Drawer = () => import('../views/Drawer')
-const NameDrawer = () => import("../components/Drawer/NameDrawer")
-const NumDrawer = () => import("../components/Drawer/NumDrawer")
-const TXNet = () => import("../components/TXNet")
-const Homework = () => import("../views/Homework")
+const Drawer = () =>
+    import ('../views/Drawer')
+const NameDrawer = () =>
+    import ("../components/Drawer/NameDrawer")
+const NumDrawer = () =>
+    import ("../components/Drawer/NumDrawer")
+const TXNet = () =>
+    import ("../components/TXNet")
+const Homework = () =>
+    import ("../views/Homework")
+const CaKStuHelper = () =>
+    import ("../views/CaKStudyHelper")
 
 Vue.use(VueRouter)
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-    meta: {
-      title: '首页'
+const routes = [{
+        path: '/',
+        name: 'Home',
+        component: Home,
+        meta: {
+            title: '首页'
+        }
+    },
+    {
+        path: '/Drawer',
+        component: Drawer,
+        children: [{
+                path: '',
+                component: NameDrawer,
+                meta: {
+                    title: '抽签系统'
+                }
+            },
+            {
+                path: 'Daisy',
+                component: NameDrawer,
+                props: { c: "Daisy" },
+                meta: {
+                    title: '抽签系统 for Daisy'
+                }
+            },
+            {
+                path: 'NameDrawer',
+                component: NameDrawer,
+                meta: {
+                    title: '抽签系统'
+                }
+            },
+            {
+                path: 'NumDrawer',
+                component: NumDrawer,
+            },
+        ],
+    },
+    {
+        path: '/Homework',
+        name: 'Homework',
+        component: Homework,
+        meta: {
+            title: '作业汇总'
+        }
+    }, {
+        path: '/TXNet',
+        name: 'TXNet',
+        component: TXNet,
+        meta: {
+            title: '天天学习'
+        },
+        children: [{
+            path: ':password',
+            meta: {
+                title: '天天学习'
+            },
+        }],
+    }, {
+        path: '/CaKStudyHelper',
+        name: 'StuHelper',
+        component: CaKStuHelper,
+        meta: {
+            title: '学习助手'
+        }
     }
-  },
-  {
-    path: '/Drawer',
-    component: Drawer,
-    children: [{
-      path: '',
-      component: NameDrawer,
-      meta: {
-        title: '抽签系统'
-      }
-    },
-    {
-      path: 'Daisy',
-      component: NameDrawer,
-      props: { c: "Daisy" },
-      meta: {
-        title: '抽签系统 for Daisy'
-      }
-    },
-    {
-      path: 'NameDrawer',
-      component: NameDrawer,
-      meta: {
-        title: '抽签系统'
-      }
-    },
-    {
-      path: 'NumDrawer',
-      component: NumDrawer,
-    },
-    ],
-  },
-  {
-    path: '/Homework',
-    name: 'Homework',
-    component: Homework,
-    meta: {
-      title: '作业汇总'
-    }
-  }, {
-    path: '/TXNet',
-    name: 'TXNet',
-    component: TXNet,
-    meta: {
-      title: '天天学习'
-    },
-    children: [{
-      path: ':password',
-      meta: {
-        title: '天天学习'
-      },
-    }],
-  }
 ]
 
 const router = new VueRouter({
-  routes
+    routes
 })
 
 export default router

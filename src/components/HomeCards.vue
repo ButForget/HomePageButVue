@@ -60,6 +60,17 @@ export default {
         subTitle: "Drawing System",
         url: "Drawer",
       },
+      {
+        title: "学习助手",
+        subTitle: "Good good study, day day up.",
+        url: "CaKStudyHelper"
+
+      }
+      // {
+      //   title: "天天学习",
+      //   subTitle: "Day day study, good good up.",
+      //   url: "TXNet",
+      // }
     ],
   }),
   methods: {},

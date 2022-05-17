@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <AppBar title="首页"></AppBar>
+    <AppBar title="首页" :home="true"></AppBar>
     <HomeCards></HomeCards>
   </v-container>
 </template>
